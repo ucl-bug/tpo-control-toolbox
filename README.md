@@ -19,4 +19,4 @@ Two functions are provided for triggering the output. Use `transmitStart` when t
 Codes used for published studies are contained in the `studies` folder.
 
 * **auditory-artefact**: Codes used for Johnstone, A., Nandi, T., Martin, E., Bestmann, S., Stagg, C. and Treeby, B., 2021. A range of pulses commonly used for human transcranial ultrasound stimulation are clearly audible. Brain Stimulation: Basic, Translational, and Clinical Research in Neuromodulation, 14(5), pp.1353-1355. https://doi.org/10.1016/j.brs.2021.08.015
-* **vep-modulation**:
+* **vep-modulation**: Codes used for Nandi, T., Johnstone, A., Martin, E., Cooper, R., Bestmann, S., Bergmann, T.O., Treeby, B. and Stagg, C.J., 2023. Ramped V1 transcranial ultrasonic stimulation modulates but does not evoke visual evoked potentials. Brain Stimulation: Basic, Translational, and Clinical Research in Neuromodulation. https://doi.org/10.1016/j.brs.2023.02.004
