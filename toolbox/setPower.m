@@ -19,7 +19,7 @@ function reply = setPower(serialTPO, power)
 % ABOUT:
 %     author        - Bradley Treeby
 %     date          - 18th November 2019
-%     last update   - 30th November 2022
+%     last update   - 3rd July 2023
 %
 % Function based on code provided by Sonic Concepts.
 
@@ -34,18 +34,13 @@ validateattributes(power, ...
 % milliwatt
 power = round(1e3 * power);
 
-% loop over channels and set power
-for channel_index = 1:settings.number_channels
+% send command to the TPO
+fprintf(serialTPO, ['GLOBALPOWER=' num2str(power)]);
 
-    % send command to the TPO (duplicate for all channels)
-    fprintf(serialTPO, ['POWER' num2str(channel_index) '=' num2str(power)]);
+% check for reply
+reply = fscanf(serialTPO);
 
-    % check for reply
-    reply = fscanf(serialTPO);
-
-    % check for error code
-    if strncmp(strip(reply), 'E', 1)
-        error(['Power not set correctly. TPO error code: ' reply]);
-    end
-    
+% check for error code
+if strncmp(strip(reply), 'E', 1)
+    error(['Power not set correctly. TPO error code: ' reply]);
 end
